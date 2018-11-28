@@ -1,0 +1,21 @@
+<div ng-controller="ScoreController as scoreCtrl">
+   <h3 class="scoreHeading">Score</h3>
+   <div class="col-md-6 col-md-offset-3">
+      <table class="table">
+         <thead>
+            <tr>
+               <th>You</th>
+               <th>Ties</th>
+               <th>Computer</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>{{scoreCtrl.scores.yourWins}}</td>
+               <td>{{scoreCtrl.scores.ties}}</td>
+               <td>{{scoreCtrl.scores.computerWins}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>

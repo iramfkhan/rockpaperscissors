@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="rockPaperScissors">
+
+<head>
+    <!-- Bootstrap CSS Library CDN -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="app.css" />
+</head>
+
+<body>
+    <div ng-controller="HeadingController as heading">
+        <h1>{{heading.title}}</h1>
+    </div>
+    <h3>Please make your selection</h3>
+    <div class="container" ng-controller="GameController as gamesCtrl">
+        <ul ng-controller="MovesController as movesCtrl">
+            <li ng-repeat="move in movesCtrl.moves"><a href ng-click="gamesCtrl.selectedMove()">{{move.name}}</a></li>
+        </ul>
+    </div>
+    <!-- Your move image -->
+    <div class="container imageContainer">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="playerHeading">You</span>
+                <img src="images/hand.svg" />
+            </div>
+            <!-- Computer move image -->
+            <div class="col-md-6">
+                <span class="playerHeading">Computer</span>
+                <img src="images/hand.svg" />
+            </div>
+        </div>
+    </div>
+    <section ng-include src=" 'game/scores.html' "></section>
+    <!-- Including the AngularJS Library from CDN -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
